@@ -1,0 +1,82 @@
+
+:root {
+    --main-circle-size: 10px;
+}
+
+.emark-rs .circle-green  {
+
+	background: green;
+	float:left;
+	width: var(--main-circle-size) ;
+	height: var(--main-circle-size) ;
+	
+	font-size: calc(var(--main-circle-size)/1.5);
+  	color: #4e0a55;
+  	line-height: var(--main-circle-size);
+  	text-align: center;
+	
+    border-radius: calc(var(--main-circle-size)/2);
+    -moz-border-radius: calc(var(--main-circle-size)/2);
+    -webkit-border-radius: calc(var(--main-circle-size)/2);
+    -khtml-border-radius:  calc(var(--main-circle-size)/2);
+}
+
+
+.emark-rs .circle-red  {
+
+    float:left;
+	width: var(--main-circle-size) ;
+	height: var(--main-circle-size) ;
+    border-radius:calc(var(--main-circle-size)/2);
+ 
+	background-image: -moz-radial-gradient(90% 90% 45deg, circle cover,  yellow 50%, red 15%);
+	background-image: -webkit-radial-gradient(90% 90%, circle cover, red, yellow);
+	background-image: radial-gradient(90% 90% 45deg, circle cover, yellow 50%, red 15%);
+	
+	animation-name: spin; 
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear; 
+}
+
+.emark-rs .green {
+	color: green;
+}
+
+.emark-rs .red {
+	color: red;
+}
+
+.emark-rs .orange {
+	color: #ff9933;
+}
+
+.emark-rs .dark {
+	color: #545352;
+}
+
+
+/* Create the animation blocks */
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+/* Spinning, gradient circle; CSS only! */
+#advanced-red {
+	width: 50px;
+	height: 50px;
+	
+	background-image: -moz-radial-gradient(45% 45% 45deg, circle cover,  yellow 100%, red 65%);
+	background-image: -webkit-radial-gradient(45% 45%, circle cover, red, yellow);
+	background-image: radial-gradient(45% 45% 45deg, circle cover, yellow 100%, red 65%);
+	
+	animation-name: spin; 
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear;
+}
+
+
+
+ 
