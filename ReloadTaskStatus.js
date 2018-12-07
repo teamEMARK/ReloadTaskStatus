@@ -271,25 +271,18 @@ define(["jquery", "qlik", "text!./ReloadTaskStatus.css"], function($, qlik, cssC
 	}
 	
  	function getTaskStatus(session,$element, callback) {
-		if (session == undefined) callback(0);
-		qlik.callRepository( '/qrs/executionresult?filter=ExecutionId eq ' + session, 'GET').success( function ( reply ) {
-			if(reply && reply[0]){
-				callback(reply[0].status);
-			}else{
-				callback(0);
-			}
-		} );					
-	};
-	
-	 function getTaskInfo(taskId, callback) {
-		if (taskId == undefined) callback(0);
-		qlik.callRepository( '/qrs/executionresult?filter=ExecutionId eq ' + session, 'GET').success( function ( reply ) {
-			if(reply && reply[0]){
-				callback(reply[0].status);
-			}else{
-				callback(0);
-			}
-		} );					
-	};
+		if (session != undefined) {
+			qlik.callRepository( '/qrs/executionresult?filter=ExecutionId eq ' + session, 'GET').success( function ( reply ) {
+				if(reply && reply[0]){
+					callback(reply[0].status);
+				}else{
+					callback(0);
+				}
+			} );					
+		} else {
+			callback(0);
+		}
+	};	
+
 	
 });
