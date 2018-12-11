@@ -3,7 +3,7 @@
 Reload task status is extension usable to show status of reload task in application.
 
 Prerequisites: 
-for not admin users - security rule for user to read access for reloadtasks, ExecutionResult* and executionsession* resource
+for not RootAdmin users - security rule for user to read access for reloadtask*, ExecutionResult* and executionsession* resource
 
 Configuration: 
  - Refresh interval in ms - interval for reload task status check 
@@ -13,3 +13,11 @@ Configuration:
  - CircleSize - change circle size
     
 See also Reload Task Button https://github.com/teamEMARK/ReloadTaskButton
+
+Example of needed security rule:
+
+```sh
+Resource filter: ExecutionResult*, ExecutionSession*,ReloadTask*
+Action: Read
+```
+![alt text](https://github.com/teamEMARK/ReloadTaskStatus/blob/master/images/RTS_rule.png)
