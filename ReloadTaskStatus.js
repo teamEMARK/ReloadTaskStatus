@@ -255,8 +255,9 @@ define(["jquery", "qlik", "text!./ReloadTaskStatus.css"], function($, qlik, cssC
 						text_reload.text('Last reload: ' + stopTime);
 						
 						//var date = new Date(stopTime);
-						//text_reload.text('Last reload: ' + moment(date).format('DD.MM.YYYY HH:MM'));					}
-						text_status.text('Status: '+ lastStatusStr);
+						//text_reload.text('Last reload: ' + moment(date).format('DD.MM.YYYY HH:MM'));
+					}
+					text_status.text('Status: '+ lastStatusStr);
 				});
 		
 			}
