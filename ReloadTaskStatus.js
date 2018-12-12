@@ -71,7 +71,6 @@ define(["jquery", "qlik", "text!./ReloadTaskStatus.css"], function($, qlik, cssC
 			} else {
 				taskId = $scope.layout.pTask;
 				checkReloadTaskId(taskId).then(function(value){
-					console.log("value: " , value);
 					if (!value) {
 						taskId = undefined;
 					}
@@ -190,7 +189,6 @@ define(["jquery", "qlik", "text!./ReloadTaskStatus.css"], function($, qlik, cssC
 				
 				qlik.callRepository( '/qrs/reloadtask/' + taskId,'GET').then( function ( reply ) {
 					var stopTime = reply.data.operational.lastExecutionResult.stopTime;
-					var date = new Date(stopTime);
 					var lastStatus = reply.data.operational.lastExecutionResult.status;
 					lastStatusStr = "";
 					
@@ -252,9 +250,13 @@ define(["jquery", "qlik", "text!./ReloadTaskStatus.css"], function($, qlik, cssC
 					if (stopTime == '1753-01-01T00:00:00.000Z') {
 						text_reload.text('');
 					} else {
-						text_reload.text('Last reload: ' + moment(date).format('DD.MM.YYYY HH:MM'));
-					}
-					text_status.text('Status: '+ lastStatusStr);
+						stopTime = stopTime.replace("T", " ");
+						stopTime = stopTime.slice(0, -8);
+						text_reload.text('Last reload: ' + stopTime);
+						
+						//var date = new Date(stopTime);
+						//text_reload.text('Last reload: ' + moment(date).format('DD.MM.YYYY HH:MM'));					}
+						text_status.text('Status: '+ lastStatusStr);
 				});
 		
 			}
