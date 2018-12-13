@@ -15,6 +15,10 @@ Configuration:
  
 Please reload application after any configuration chanages.
 
+![alt text](https://github.com/teamEMARK/ReloadTaskStatus/blob/master/images/settings.png)
+
+
+
 See also Reload Task Button https://github.com/teamEMARK/ReloadTaskButton
 
 Example of needed security rule:
@@ -27,3 +31,6 @@ Action: Read
 
 Demo:
 ![alt text](https://github.com/teamEMARK/ReloadTaskStatus/blob/master/images/EMARK_Reload_Task.gif)
+
+Application example:
+![alt text](https://github.com/teamEMARK/ReloadTaskStatus/blob/master/images/screenshot.png)
