@@ -153,6 +153,21 @@ define(["jquery", "qlik", "text!./ReloadTaskStatus.css"], function($, qlik, cssC
 								expression: "optional"
 							}							
 						}
+					},
+					about: {
+						label: "About",
+						type: "items",
+						items: {
+							text: {
+								label: "EMARK Reload Task Status extenstion",
+								component: "text"
+							},				
+							version: {
+								label: 'Version: 0.2',
+								component: "text"
+							}					
+
+						}
 					}
 				}
 			}	
