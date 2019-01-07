@@ -34,3 +34,5 @@ Demo:
 
 Application example:
 ![alt text](https://github.com/teamEMARK/ReloadTaskStatus/blob/master/images/screenshot.png)
+
+Tested Qlik Sense Version: Qlik Sense April 2017 and newer
