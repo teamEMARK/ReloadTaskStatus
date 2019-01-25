@@ -265,12 +265,8 @@ define(["jquery", "qlik", "text!./ReloadTaskStatus.css"], function($, qlik, cssC
 					if (stopTime == '1753-01-01T00:00:00.000Z') {
 						text_reload.text('');
 					} else {
-						stopTime = stopTime.replace("T", " ");
-						stopTime = stopTime.slice(0, -8);
-						text_reload.text('Last reload: ' + stopTime);
-						
-						//var date = new Date(stopTime);
-						//text_reload.text('Last reload: ' + moment(date).format('DD.MM.YYYY HH:MM'));
+						var date = new Date(stopTime );
+						text_reload.text('Last reload: ' + date.toLocaleString());
 					}
 					text_status.text('Status: '+ lastStatusStr);
 				});
