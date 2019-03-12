@@ -105,6 +105,7 @@ define(["jquery", "qlik", "text!./ReloadTaskStatus.css"], function($, qlik, cssC
 			} 
 
 			intervalId = setInterval(function(){ checkStatus($element, taskId, circle, circle_text, label, text_reload, text_status, intervalId); }, refreshInterval);
+			$scope.$on("$destroy", function(){ clearInterval(intervalId); });
 		},
 		controller: ['$scope', '$sce', function ( $scope, $sce ) {}],
 			definition: {
